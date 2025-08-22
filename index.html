@@ -343,7 +343,7 @@
 
           <div class="col-lg-5">
 
-            <div class="info-wrap">
+            <div class="info-wrap bg-white p-4 p-lg-5 rounded-3 shadow-sm">
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
@@ -368,13 +368,26 @@
                 </div>
               </div><!-- End Info Item -->
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px; border-radius: .5rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
 
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-5">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form bg-white p-4 p-lg-5 rounded-3 shadow-sm" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
+
+                <!-- Web3Forms required/optional fields -->
+                <input type="hidden" name="access_key" value="912234c7-9710-47e8-a0a3-9cbfdec3344e">
+                <input type="hidden" name="from_name" value="Nichewave Technologies Website">
+                <input type="hidden" name="to" value="vsaisandeep17@gmail.com">
+                <!-- Optional: reply-to will use the user's email field -->
+                <input type="hidden" name="replyto" value="email">
+                <!-- Optional: set from_email to the user's email field for better deliverability -->
+                <input type="hidden" name="from_email" value="email">
+                <!-- Optional: honeypot to reduce spam -->
+                <input type="checkbox" name="botcheck" class="d-none" style="display:none !important" tabindex="-1" autocomplete="off">
+                <!-- Temporarily disable redirect to see Web3Forms confirmation page for debugging -->
+                <!-- <input type="hidden" name="redirect" value="index.html#contact"> -->
 
                 <div class="col-md-6">
                   <label for="name-field" class="pb-2">Your Name</label>
@@ -397,11 +410,7 @@
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
+                  <button type="submit" class="btn btn-primary px-4 py-2">Send Message</button>
                 </div>
 
               </div>
