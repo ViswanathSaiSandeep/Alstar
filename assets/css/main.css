@@ -87,6 +87,14 @@ h6 {
   font-family: var(--heading-font);
 }
 
+.para{
+  text-align: justify;
+}
+
+.center{
+  text-align: center;
+}
+
 .NichewaveLogo{
   width: 250px;
   height: auto;
