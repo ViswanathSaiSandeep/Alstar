@@ -103,6 +103,41 @@
   window.addEventListener('load', aosInit);
 
   /**
+   * Animated Counters for elements with .counter
+   */
+  function animateValue(el, target, suffix, duration = 1200) {
+    let start = 0;
+    const startTime = performance.now();
+    function step(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const value = Math.floor(progress * target);
+      el.textContent = `${value}${suffix}`;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function initCounters() {
+    const counters = document.querySelectorAll('.counter');
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-target')) || 0;
+          const suffix = el.getAttribute('data-suffix') || '';
+          animateValue(el, target, suffix);
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => observer.observe(c));
+  }
+  window.addEventListener('load', initCounters);
+
+  /**
    * Auto generate the carousel indicators
    */
   document.querySelectorAll('.carousel-indicators').forEach((carouselIndicator) => {
