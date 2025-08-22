@@ -87,6 +87,10 @@ h6 {
   font-family: var(--heading-font);
 }
 
+.NichewaveLogo{
+  width: 350px;
+}
+
 .para{
   text-align: justify;
 }
@@ -95,9 +99,12 @@ h6 {
   text-align: center;
 }
 
-.NichewaveLogo{
-  width: 250px;
-  height: auto;
+.heading{
+  font-size: small;
+}
+
+.left{
+  text-align: justify;
 }
 
 /* Pulsating Play Button
